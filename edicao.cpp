@@ -37,6 +37,11 @@ void Edicao::on_btnCancelar_clicked()
 
 void Edicao::on_btnEditar_clicked()
 {
+    QMessageBox::StandardButton choice = QMessageBox::question(this, "atualização", "deseja realmente atualizar esses dados", QMessageBox::Yes | QMessageBox::No);
+
+    if(choice == QMessageBox::No)
+        return;
+
     course->setNome(ui->txtNome->text());
     course->setDescricao(ui->txtDescricao->toPlainText());
     course->setIsCompleted(ui->checkCompleto->isChecked());
@@ -48,7 +53,7 @@ void Edicao::on_btnEditar_clicked()
     {
         QMessageBox::warning(this, "validação", "os dados inseridos não estão com a validação correta");
         return;
-    }
+    }                                         
 
     db->updateCourse(course->getId(), *course);
 
