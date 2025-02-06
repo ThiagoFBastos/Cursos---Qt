@@ -73,9 +73,9 @@ void Listagem::on_btnExcluir_clicked()
 
     if(selectedRows.size() == 1)
     {
-        QMessageBox::StandardButton choise = QMessageBox::question(this, "exclusão", "deseja excluir este registro permanentemente?", QMessageBox::Ok | QMessageBox::No);
+        QMessageBox::StandardButton choice = QMessageBox::question(this, "exclusão", "deseja excluir este registro permanentemente?", QMessageBox::Ok | QMessageBox::No);
 
-        if(choise == QMessageBox::No)
+        if(choice == QMessageBox::No)
             return;
 
         auto selectedRow = selectedRows.front();
