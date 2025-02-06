@@ -3,10 +3,10 @@
 #include <QCheckBox>
 #include <QMessageBox>
 
-Listagem::Listagem(QWidget *parent)
+Listagem::Listagem(Db *db, QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Listagem)
-    , db(new Db)
+    , db(db)
 {
     ui->setupUi(this);
 
@@ -60,7 +60,6 @@ Listagem::Listagem(QWidget *parent)
 Listagem::~Listagem()
 {
     delete ui;
-    delete db;
 }
 
 void Listagem::closeEvent(QCloseEvent *event)
@@ -97,7 +96,7 @@ void Listagem::on_btnEditar_clicked()
         if(edicao.get())
             edicao.release();
 
-        edicao = std::unique_ptr<Edicao>(new Edicao(&cursos[row], this));
+        edicao = std::unique_ptr<Edicao>(new Edicao(db, &cursos[row], this));
 
         edicao.get()->show();
         hide();

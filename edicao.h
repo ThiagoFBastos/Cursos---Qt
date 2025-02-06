@@ -15,7 +15,7 @@ class Edicao : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit Edicao(Course* course, QWidget *parent = nullptr);
+    explicit Edicao(Db *db, Course* course, QWidget *parent = nullptr);
     ~Edicao();
 
 private slots:
@@ -25,6 +25,7 @@ private slots:
 
 private:
     Ui::Edicao *ui;
+    Db *db;
     Course* course = nullptr;
 
     void closeEvent(QCloseEvent *event) override;

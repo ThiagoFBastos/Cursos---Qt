@@ -17,7 +17,7 @@ class Listagem : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit Listagem(QWidget *parent = nullptr);
+    explicit Listagem(Db *db, QWidget *parent = nullptr);
     ~Listagem();
 
 private slots:
@@ -28,7 +28,7 @@ private slots:
 
 private:
     Ui::Listagem *ui;
-    Db *db = nullptr;
+    Db *db;
     std::vector<Course> cursos;
     std::unique_ptr<Edicao> edicao {};
     void closeEvent(QCloseEvent *event) override;

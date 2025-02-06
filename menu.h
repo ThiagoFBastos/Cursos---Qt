@@ -5,6 +5,7 @@
 #include "curso.h"
 #include "listagem.h"
 #include <memory>
+#include "db.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -27,6 +28,7 @@ private slots:
 
 private:
     Ui::Menu *ui;
+    Db *db = nullptr;
     std::unique_ptr<Curso> curso {};
     std::unique_ptr<Listagem> listagem {};
 };

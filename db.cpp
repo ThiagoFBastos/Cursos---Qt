@@ -5,7 +5,6 @@
 
 Db::Db(): query {new QSqlQueryModel()}
 {
-    db = QSqlDatabase::addDatabase("QSQLITE");
     db.setDatabaseName(QDir::currentPath() + QDir::separator() +  "courses.db");
     db.open();
 
@@ -29,9 +28,14 @@ void Db::initDB()
 
 Db::~Db()
 {
-    db.close();
-    delete command;
-    delete query;
+    if(command)
+        delete command;
+
+    if(query)
+        delete query;
+
+    if(db.isOpen())
+        db.close();
 }
 
 void Db::addCourse(const Course& course)

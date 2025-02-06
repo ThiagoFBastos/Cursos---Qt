@@ -13,14 +13,13 @@
 class Db
 {
 private:
-    QSqlDatabase db;
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
     QSqlQuery *command = nullptr;
     QSqlQueryModel *query = nullptr;
     void initDB();
 public:
     Db();
     ~Db();
-    void closeConnection();
     void addCourse(const Course& course);
     void updateCourse(int id, const Course& course);
     void deleteCourse(int id);

@@ -2,10 +2,11 @@
 #include "ui_edicao.h"
 #include <QMessageBox>
 
-Edicao::Edicao(Course* course, QWidget *parent)
+Edicao::Edicao(Db *db, Course* course, QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Edicao)
     , course(course)
+    , db(db)
 {
     ui->setupUi(this);
 
@@ -36,8 +37,6 @@ void Edicao::on_btnCancelar_clicked()
 
 void Edicao::on_btnEditar_clicked()
 {
-    Db db;
-
     course->setNome(ui->txtNome->text());
     course->setDescricao(ui->txtDescricao->toPlainText());
     course->setIsCompleted(ui->checkCompleto->isChecked());
@@ -51,7 +50,7 @@ void Edicao::on_btnEditar_clicked()
         return;
     }
 
-    db.updateCourse(course->getId(), *course);
+    db->updateCourse(course->getId(), *course);
 
     QMessageBox::about(this, "edição", "os dados foram alterados com suceso");
 }

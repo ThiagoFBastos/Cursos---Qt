@@ -15,7 +15,7 @@ class Curso : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit Curso(QWidget *parent = nullptr);
+    explicit Curso(Db *db, QWidget *parent = nullptr);
     ~Curso();
 
 private slots:
@@ -25,7 +25,7 @@ private slots:
 
 private:
     Ui::Curso *ui;
-    Db *db = nullptr;
+    Db *db;
 
     void closeEvent(QCloseEvent *event) override;
 };

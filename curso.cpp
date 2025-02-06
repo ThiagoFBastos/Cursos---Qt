@@ -4,10 +4,10 @@
 #include <vector>
 #include <QMessageBox>
 
-Curso::Curso(QWidget *parent)
+Curso::Curso(Db *db, QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Curso)
-    , db(new Db)
+    , db(db)
 {
     ui->setupUi(this);
 }
@@ -15,7 +15,6 @@ Curso::Curso(QWidget *parent)
 Curso::~Curso()
 {
     delete ui;
-    if(db) delete db;
 }
 
 void Curso::on_btnCancelar_clicked()
