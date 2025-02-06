@@ -48,6 +48,9 @@
      </item>
      <item row="0" column="1">
       <widget class="QLineEdit" name="txtNome">
+       <property name="toolTip">
+        <string>Nome do curso</string>
+       </property>
        <property name="styleSheet">
         <string notr="true">QLineEdit {
 	background-color: white;
@@ -76,12 +79,18 @@
      </item>
      <item row="0" column="1">
       <widget class="QLineEdit" name="txtURL">
+       <property name="toolTip">
+        <string>URL do curso</string>
+       </property>
        <property name="styleSheet">
         <string notr="true">QLineEdit {
 	color: blue;
 	text-decoration: underline;
 	background-color: white;
 }</string>
+       </property>
+       <property name="placeholderText">
+        <string>https://youtube.com</string>
        </property>
       </widget>
      </item>
@@ -99,6 +108,9 @@
     <layout class="QFormLayout" name="formLayout_3">
      <item row="0" column="1">
       <widget class="QDateEdit" name="dateInicio">
+       <property name="toolTip">
+        <string>Data de inicio</string>
+       </property>
        <property name="styleSheet">
         <string notr="true">QDateEdit {
 	background-color: white;
@@ -134,6 +146,9 @@
      </item>
      <item row="0" column="1">
       <widget class="QDoubleSpinBox" name="spinPreco">
+       <property name="toolTip">
+        <string>Preço do curso</string>
+       </property>
        <property name="styleSheet">
         <string notr="true">QDoubleSpinBox {
 	background-color: white;
@@ -174,6 +189,9 @@
      </item>
      <item>
       <widget class="QTextEdit" name="txtDescricao">
+       <property name="toolTip">
+        <string>Descrção do curso</string>
+       </property>
        <property name="styleSheet">
         <string notr="true">QTextEdit {
 	background-color: white;
