@@ -37,6 +37,7 @@
         <string notr="true">QLineEdit {
 	color: blue;
 	text-decoration: underline;
+	background-color: white;
 }</string>
        </property>
       </widget>
@@ -62,6 +63,11 @@
      </item>
      <item row="0" column="1">
       <widget class="QDoubleSpinBox" name="spinPreco">
+       <property name="styleSheet">
+        <string notr="true">QDoubleSpinBox {
+	background-color: white;
+}</string>
+       </property>
        <property name="prefix">
         <string>R$ </string>
        </property>
@@ -99,7 +105,7 @@
       <widget class="QLineEdit" name="txtNome">
        <property name="styleSheet">
         <string notr="true">QLineEdit {
-	border-bottom: 1px solid red;
+	background-color: white;
 }</string>
        </property>
       </widget>
@@ -117,7 +123,13 @@
     </property>
     <layout class="QFormLayout" name="formLayout_3">
      <item row="0" column="1">
-      <widget class="QDateEdit" name="dateInicio"/>
+      <widget class="QDateEdit" name="dateInicio">
+       <property name="styleSheet">
+        <string notr="true">QDateEdit {
+	background-color: white;
+}</string>
+       </property>
+      </widget>
      </item>
      <item row="0" column="0">
       <widget class="QLabel" name="lblInicio">
@@ -220,7 +232,13 @@ QPushButton: hover {
       </widget>
      </item>
      <item>
-      <widget class="QTextEdit" name="txtDescricao"/>
+      <widget class="QTextEdit" name="txtDescricao">
+       <property name="styleSheet">
+        <string notr="true">QTextEdit {
+	background-color: white;
+}</string>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>
