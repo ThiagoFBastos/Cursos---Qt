@@ -86,6 +86,8 @@ void Listagem::on_btnExcluir_clicked()
         db->deleteCourse(id);
         ui->tableCursos->removeRow(row);
     }
+    else if(selectedRows.isEmpty())
+        QMessageBox::warning(this, "exclusão", "selecione uma linha para ser excluída");
 }
 
 
@@ -106,5 +108,7 @@ void Listagem::on_btnEditar_clicked()
         edicao.get()->show();
         hide();
     }
+    else if(selectedRows.isEmpty())
+        QMessageBox::warning(this, "edição", "selecione uma linha para editar um registro");
 }
 
