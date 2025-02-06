@@ -73,6 +73,11 @@ void Listagem::on_btnExcluir_clicked()
 
     if(selectedRows.size() == 1)
     {
+        QMessageBox::StandardButton choise = QMessageBox::question(this, "exclusão", "deseja excluir este registro permanentemente?", QMessageBox::Ok | QMessageBox::No);
+
+        if(choise == QMessageBox::No)
+            return;
+
         auto selectedRow = selectedRows.front();
         int row = selectedRow.row();
         QTableWidgetItem *item = ui->tableCursos->item(row, 0);
