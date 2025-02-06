@@ -186,6 +186,9 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="toolTip">
+        <string>Editar curso</string>
+       </property>
        <property name="styleSheet">
         <string notr="true">QPushButton {
 	background-color: #0000FF;
@@ -212,6 +215,9 @@ QPushButton: hover {
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="toolTip">
+        <string>Resetar valores</string>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton {

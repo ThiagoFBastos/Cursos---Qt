@@ -190,7 +190,7 @@
      <item>
       <widget class="QTextEdit" name="txtDescricao">
        <property name="toolTip">
-        <string>Descrção do curso</string>
+        <string>Descrição do curso</string>
        </property>
        <property name="styleSheet">
         <string notr="true">QTextEdit {
@@ -232,6 +232,9 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="toolTip">
+        <string>Cadastrar novo curso</string>
+       </property>
        <property name="autoFillBackground">
         <bool>false</bool>
        </property>
@@ -242,6 +245,11 @@
 	font-weight: bold;
 	padding-left: 40px;
 	padding-right: 40px;
+}
+
+QPushButton:selected {
+	color: black;
+	background-color: #000000;
 }</string>
        </property>
        <property name="text">
@@ -256,6 +264,9 @@
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="toolTip">
+        <string>Limpar conteúdo</string>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton {
