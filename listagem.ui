@@ -121,6 +121,10 @@
 	color: white;
 	padding-top: 10px;
 	padding-bottom: 10px;
+}
+
+QPushButton:hover {
+	border: 1.2px solid black;
 }</string>
        </property>
        <property name="text">
@@ -136,6 +140,10 @@
 	color: white;
 	padding-top: 10px;
 	padding-bottom: 10px;
+}
+
+QPushButton:hover {
+	border: 1.2px solid black;
 }</string>
        </property>
        <property name="text">

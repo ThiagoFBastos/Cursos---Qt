@@ -25,6 +25,9 @@
   <property name="windowTitle">
    <string>Menu</string>
   </property>
+  <property name="accessibleName">
+   <string/>
+  </property>
   <property name="styleSheet">
    <string notr="true">QMainWindow {
 	background-color: #119e95;
@@ -55,6 +58,10 @@
 	font-weight: bold;
 	border: 1rem solid;
 	border-radius: 30px;
+}
+
+QPushButton:hover {
+	border: 1.2px solid black;
 }</string>
        </property>
        <property name="text">
@@ -76,6 +83,10 @@
 	font-weight: bold;
 	border: 1rem solid;
 	border-radius: 30px;
+}
+
+QPushButton:hover {
+	border: 1.2px solid black;
 }</string>
        </property>
        <property name="text">
