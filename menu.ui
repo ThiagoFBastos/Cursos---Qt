@@ -52,6 +52,9 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="toolTip">
+        <string>Cadastrar novo curso</string>
+       </property>
        <property name="styleSheet">
         <string notr="true">QPushButton {
 	background-color: white;
@@ -76,6 +79,9 @@ QPushButton:hover {
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="toolTip">
+        <string>Listar todos os cursos</string>
        </property>
        <property name="styleSheet">
         <string notr="true">QPushButton {

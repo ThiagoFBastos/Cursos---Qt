@@ -115,6 +115,9 @@
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <widget class="QPushButton" name="btnEditar">
+       <property name="toolTip">
+        <string>Editar um curso</string>
+       </property>
        <property name="styleSheet">
         <string notr="true">QPushButton {
 	background-color: yellow;
@@ -134,6 +137,9 @@ QPushButton:hover {
      </item>
      <item>
       <widget class="QPushButton" name="btnExcluir">
+       <property name="toolTip">
+        <string>Excluir um curso</string>
+       </property>
        <property name="styleSheet">
         <string notr="true">QPushButton {
 	background-color: red;
