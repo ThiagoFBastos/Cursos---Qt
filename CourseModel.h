@@ -4,6 +4,8 @@
 #include <QString>
 #include <QDate>
 #include <QUrl>
+#include <utility>
+#include <map>
 
 class Course
 {
@@ -18,18 +20,18 @@ private:
 
     bool nomeValido() const
     {
-        return nome.length() >= 5;
+        return nome.length() >= 5 && nome.length() <= 256;
     }
 
     bool descricaoValida() const
     {
-        return descricao.length() >= 50;
+        return descricao.length() >= 50 && descricao.length() <= 1000;
     }
 
     bool URLValida() const
     {
         QUrl url(URL);
-        return url.isValid();
+        return url.isValid() && URL.length() <= 256;
     }
 
     bool dataInicioValida() const
@@ -39,10 +41,21 @@ private:
 
     bool precoValido() const
     {
-        return preco >= 0;
+        return preco >= 0 && preco <= 5000;
     }
 public:
     Course() = default;
+
+    Course(const Course& other)
+    {
+        id = other.id;
+        nome = other.nome;
+        descricao = other.descricao;
+        URL = other.URL;
+        preco = other.preco;
+        isCompleted = other.isCompleted;
+        dataInicio = other.dataInicio;
+    }
 
     int getId() const
     {
@@ -114,9 +127,42 @@ public:
         this->isCompleted = isCompleted;
     }
 
-    bool isValid() const
+    std::pair<bool, std::map<QString, QString>> isValid() const
     {
-        return nomeValido() && descricaoValida() && URLValida() && dataInicioValida() && precoValido();
+        bool result = true;
+        std::map<QString, QString> errors;
+
+        if(!nomeValido())
+        {
+            result = false;
+            errors["nome"] = "o nome deve ter entre 5 e 256 caracteres";
+        }
+
+        if(!descricaoValida())
+        {
+            result = false;
+            errors["descricao"] = "a descrição deve conter entre 50 e 1000 caracteres";
+        }
+
+        if(!URLValida())
+        {
+            result = false;
+            errors["URL"] = "a url deve ser válida";
+        }
+
+        if(!precoValido())
+        {
+            result = false;
+            errors["preco"] = "o preço deve ser estar entre R$ 0,00 e R$ 5000,00";
+        }
+
+        if(!dataInicioValida())
+        {
+            result = false;
+            errors["data_inicio"] = "a data de inicio deve ser depois de 17/05/1999";
+        }
+
+        return {result, errors};
     }
 };
 

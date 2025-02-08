@@ -23,6 +23,16 @@ private slots:
 
     void on_btnCadastrar_clicked();
 
+    void on_txtNome_textChanged(const QString &arg1);
+
+    void on_txtURL_textChanged(const QString &arg1);
+
+    void on_dateInicio_dateTimeChanged(const QDateTime &dateTime);
+
+    void on_spinPreco_valueChanged(double arg1);
+
+    void on_txtDescricao_textChanged();
+
 private:
     Ui::Curso *ui;
     Db *db;
