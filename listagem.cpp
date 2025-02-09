@@ -88,6 +88,8 @@ void Listagem::on_btnExcluir_clicked()
     }
     else if(selectedRows.isEmpty())
         QMessageBox::warning(this, "exclusão", "selecione uma linha para ser excluída");
+    else
+        QMessageBox::warning(this, "exclusão", "selecione apenas uma linha para ser excluída");
 }
 
 
@@ -110,5 +112,7 @@ void Listagem::on_btnEditar_clicked()
     }
     else if(selectedRows.isEmpty())
         QMessageBox::warning(this, "edição", "selecione uma linha para editar um registro");
+    else
+        QMessageBox::warning(this, "edição", "selecione apenas uma linha para a edição");
 }
 
