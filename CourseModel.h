@@ -36,7 +36,7 @@ private:
 
     bool dataInicioValida() const
     {
-        return dataInicio > QDate(1999, 5, 17);
+        return dataInicio > QDate(1900, 1, 1);
     }
 
     bool precoValido() const
@@ -159,7 +159,7 @@ public:
         if(!dataInicioValida())
         {
             result = false;
-            errors["data_inicio"] = "a data de inicio deve ser depois de 17/05/1999";
+            errors["data_inicio"] = "a data de inicio deve ser depois de 01/01/1900";
         }
 
         return {result, errors};
