@@ -107,7 +107,7 @@ void Listagem::on_btnEditar_clicked()
 
         edicao = std::unique_ptr<Edicao>(new Edicao(db, &cursos[row], this));
 
-        edicao.get()->show();
+        edicao->show();
         hide();
     }
     else if(selectedRows.isEmpty())
