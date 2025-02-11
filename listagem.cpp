@@ -102,9 +102,6 @@ void Listagem::on_btnEditar_clicked()
         auto selectedRow = selectedRows.front();
         int row = selectedRow.row();
 
-        if(edicao.get())
-            edicao.release();
-
         edicao = std::unique_ptr<Edicao>(new Edicao(db, &cursos[row], this));
 
         edicao->show();

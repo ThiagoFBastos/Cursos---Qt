@@ -22,9 +22,6 @@ Menu::~Menu()
 
 void Menu::on_btnCadastrar_clicked()
 {
-    if(curso.get())
-        curso.release();
-
     curso = std::unique_ptr<Curso>(new Curso(db, this));
     curso->show();
     hide();
@@ -33,9 +30,6 @@ void Menu::on_btnCadastrar_clicked()
 
 void Menu::on_btnListar_clicked()
 {
-    if(listagem.get())
-        listagem.release();
-
     listagem = std::unique_ptr<Listagem>(new Listagem(db, this));
     listagem->show();
     hide();
